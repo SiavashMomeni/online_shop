@@ -8,10 +8,12 @@ from shop.models import Product, Category
 def home(request, slug=None):
     products = Product.objects.filter(status=True)
     categories = Category.objects.filter(is_sub=False)
+    selected_category = None
     if slug:
         category = get_object_or_404(Category, slug=slug)
         products = products.filter(category=category)
-    return render(request, 'shop/home.html', {'products': products, 'categories': categories})
+        selected_category = category.id
+    return render(request, 'shop/home.html', {'products': products, 'categories': categories, 'selected_category':selected_category})
 
 
 def product_detail(request, slug):

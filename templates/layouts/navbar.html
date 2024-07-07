@@ -1,13 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="container-fluid">
-            <div class="navbar-nav">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav me-auto">
                 <a class="nav-item nav-link" href="{% url 'shop:home' %}">Home</a>
+            </div>
+            <div class="navbar-nav">
                 {% if request.user.is_authenticated %}
-                    <a class="nav-item nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+                <a class="nav-item nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+                <a class="nav-item nav-link" href="{% url 'cart:detail' %}">Cart</a>
+
                 {% else %}
-                    <a class="nav-item nav-link" href="{% url 'accounts:login' %}">Login</a>
-                    <a class="nav-item nav-link" href="{% url 'accounts:register' %}">Register</a>
+                <a class="nav-item nav-link" href="{% url 'accounts:login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'accounts:register' %}">Register</a>
                 {% endif %}
             </div>
         </div>

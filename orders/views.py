@@ -32,7 +32,7 @@ def detail(request, order_id):
 
 MERCHANT = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
 client = Client('https://www.zarinpal.com/pg/services/WebGate/wsdl')
-description = "پرداخت رضا"  # Required
+description = "پرداخت سیا"  # Required
 mobile = '09335668353'  # Optional
 CallbackURL = 'http://localhost:8000/orders/verify/'  # Important: need to edit for realy server.
 

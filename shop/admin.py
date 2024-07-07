@@ -1,4 +1,4 @@
-import var_dump
+# import var_dump
 from django.contrib import admin
 
 # Register your models here.
